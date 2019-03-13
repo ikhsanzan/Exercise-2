@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+    <style type="text/css">
+        body {
+            background: #DBDBDB;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            color: #4C3549;
+        }
+
+        .container {
+            margin: 0 auto;
+            background-color: #B0B5B3;
+            width: 300px;
+            opacity: 0.5;
+            transform: translate(50%, -50%);
+            top: 50%;
+            right: 50%;
+            position: absolute;
+            height: 420px;
+            border-radius: 10px;
+
+        }
+
+        form {
+            margin: 0 auto;
+            width: 200px;
+            height: 300px;
+        }
+
+        #display {
+            width: 194px;
+            height: 38px;
+            border-radius: 10px;
+        }
+
+        input[type=button],
+        input[type=reset] {
+            margin-top: 10px;
+            width: 64px;
+        }
+
+        .button {
+            border-radius: 10px;
+            background-color: #706F6F;
+            color: #110B11;
+            font-weight: bold;
+            height: 35px;
+            font-size: 20px;
+        }
+
+        .wrapper {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Calculator </h1>
+        <form name="calc">
+            <input type="display" name="display" id="display" placeholder="0">
+            <br>
+
+            <input type="reset" name="btnClear" value="c" class="button">
+            <input type="button" class="button" name="btnEqual" value="="
+                onclick="calc.display.value=eval(calc.display.value)">
+            <input type="button" class="button" name="btnAdd" value="+" onclick="displayValue(this.value)">
+            <br>
+            <input type="button" class="button" name="btnDivide" value="/" onclick="displayValue(this.value)">
+            <input type="button" class="button" name="btnMulitply" value="*" onclick="displayValue(this.value)">
+            <input type="button" class="button" name="btnSubtract" value="-" onclick="displayValue(this.value)">
+            <br>
+            <input type="button" class="button" name="btn7" value=7 onclick="displayValue(this.value)">
+            <input type="button" class="button" name="btn8" value=8 onclick="displayValue(this.value)">
+            <input type="button" class="button" name="btn9" value=9 onclick="displayValue(this.value)">
+            <br>
+            <input type="button" class="button" name="btn4" value=4 onclick="displayValue(this.value)">
+            <input type="button" class="button" name="btn5" value=5 onclick="displayValue(this.value)">
+            <input type="button" class="button" name="btn6" value=6 onclick="displayValue(this.value)">
+            <br>
+            <input type="button" class="button" name="btn1" value=1 onclick="displayValue(this.value)">
+            <input type="button" class="button" name="btn2" value=2 onclick="displayValue(this.value)">
+            <input type="button" class="button" name="btn3" value=3 onclick="displayValue(this.value)">
+            <br>
+            <div class="wrapper">
+                <input type="button" class="button" name="btn0" value=0 onclick="displayValue(this.value)">
+            </div>
+        </form>
+
+    </div>
+
+    <script type="text/javascript">
+
+        function displayValue(num) {
+            document.calc.display.value = document.calc.display.value + num
+        }
+
+    </script>
+
+    
+</body>
+</html>
